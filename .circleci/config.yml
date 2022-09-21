@@ -1,14 +1,16 @@
+
+
 version: 2.1
 
 orbs:
-  qualysetl: qualysetl/qualysetl@0.7.50
+  bridgecrew: bridgecrew/bridgecrew@1.0.5
 
 jobs:
   build:
-    executor: qualysetl/default
+    executor: bridgecrew/default
     steps:
       - checkout
-      - qualysetl/scan:
+      - bridgecrew/scan:
           file: "./ForNeova/msk-cluster.tf"
-        
-         
+          api-key-variable: f7835a71f131ca0d5b62123895f00a0df40232f7
+          prisma-api-url: https://api.prismacloud.io
